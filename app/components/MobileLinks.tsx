@@ -40,15 +40,6 @@ export default function MobileLinks({ closeMenu, technologies }: { closeMenu: ()
             )}/>
         </span>
       ))}
-      <span className="mt-4">
-        <Link href="/technologies/add" onClick={closeMenu} className={clsx(
-        'rounded p-5 pt-2 lg:text-center bg-gray-900 hover:bg-gray-500 hover:text-gray-300',
-          {
-          'bg-gray-600 text-gray-300': pathname === '/technologies/add',
-          },
-        )}>
-      +</Link>
-      </span>
     </nav>
   );
 }

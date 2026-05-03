@@ -1,5 +1,6 @@
 
-import { addProject, fetchAllTechs} from '@/app/action/fetch';
+import { addProject} from '@/app/action/import';
+import { fetchAllTechs } from '@/app/action/fetch';
 import { Technology } from "@/app/lib/definitions";
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
@@ -93,7 +94,7 @@ export default async function AddProjectPage({ params }: { params: Promise<{ id:
               name="image"
               required
               className="w-full px-4 py-2 bg-gray-700 text-white rounded border border-gray-600 focus:outline-none focus:border-blue-500"
-              placeholder="eg., /image.png"
+              placeholder="https://..."
             />
           </div>
 

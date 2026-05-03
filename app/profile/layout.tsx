@@ -3,21 +3,14 @@ import Footer from "../components/Footer";
 import { fetchAllTechs } from "../action/fetch";
 import { getUser } from "../lib/dal";
 
-export default async function TechnologiesLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const allTechs = await fetchAllTechs();
+export default async function ProfileLayout({ children }: { children: React.ReactNode }) {
+  const technologies = await fetchAllTechs();
   const user = await getUser();
-  const technologies = allTechs.filter((t) => t.isActive);
 
   return (
     <>
       <Header technologies={technologies} user={user} />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
   );
