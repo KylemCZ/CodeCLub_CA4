@@ -5,7 +5,7 @@ import { cookies } from 'next/headers'
 const protectedRoutes = ['/admin', '/technologies']
 const publicRoutes = ['/login', '/signup', '/']
 
-export default async function middleware(req: NextRequest) {
+export default async function proxy(req: NextRequest) {
   const path = req.nextUrl.pathname
   const isProtectedRoute = protectedRoutes.some(r => path.startsWith(r))
   const isPublicRoute = publicRoutes.includes(path)
